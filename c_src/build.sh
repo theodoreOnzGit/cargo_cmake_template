@@ -14,6 +14,12 @@ watch_cmake(){
 		-- cmake -S ./c_src -B ./c_src/build
 }
 
+echo "watch_run: uses cargo watch to run cmake, make and run the app"
+watch_run(){
+	cargo watch --ignore ./c_src/build \
+		-- ./cmake_build.sh
+}
+
 echo "clean_cmake: cleans the build directory in current dir"
 clean_cmake(){
 	rm -r build/*
